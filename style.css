@@ -1,0 +1,253 @@
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f6f4f9;
+  color: #222;
+  line-height: 1.5;
+}
+/* ===== Header & Navigation ===== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #4a1f6b;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+}
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.site-nav {
+  display: flex;
+  gap: 1.2rem;
+}
+.nav-link {
+  color: #e6dcf0;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+  background: #ffffff;
+  color: #4a1f6b;
+  font-weight: 600;
+}
+
+/* ===== Page Sections ===== */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+.page {
+  display: none;
+  animation: fadeIn 0.25s ease-in;
+}
+.page.active-page {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+h1 {
+  margin-bottom: 0.5rem;
+  color: #4a1f6b;
+}
+.tagline {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Dashboard Cards ===== */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+
+
+  margin-bottom: 1.5rem;
+}
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.card h2 {
+  font-size: 2rem;
+  color: #4a1f6b;
+}
+.card p {
+  color: #666;
+  margin-top: 0.3rem;
+}
+.quick-links {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.btn {
+  background: #4a1f6b;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #36154f;
+}
+/* ===== Tables ===== */
+.table-wrapper {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+}
+thead {
+  background: #4a1f6b;
+  color: #fff;
+}
+th, td {
+  text-align: left;
+  padding: 0.7rem 1rem;
+}
+tbody tr:nth-child(even) {
+  background: #f3eef8;
+}
+tbody tr:hover {
+  background: #e8def2;
+}
+.badge-full {
+  color: #b00020;
+  font-weight: 600;
+}
+.cancel-btn {
+  background: #b00020;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+}
+/* ===== Registration Form ===== */
+.form-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 520px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.form-card label {
+  display: block;
+  margin: 0.8rem 0 0.25rem;
+  font-weight: 600;
+
+
+
+
+
+  color: #4a1f6b;
+}
+.form-card input,
+.form-card select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.submit-btn {
+  margin-top: 1.2rem;
+}
+.form-message {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+.form-message.ok { color: #1b7a3d; }
+.form-message.error { color: #b00020; }
+
+/* ===== Search ===== */
+.search-controls {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+#searchInput {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+#filterEvent {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.no-results {
+  margin-top: 1rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* ===== Responsive: Mobile Breakpoint ===== */
+@media (max-width: 700px) {
+  .nav-toggle {
+    display: block;
+  }
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    right: 0;
+    background: #4a1f6b;
+    width: 200px;
+    padding: 0.5rem;
+  }
+  .site-nav.open {
+    display: flex;
+  }
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+  .search-controls {
+    flex-direction: column;
+  }
+}

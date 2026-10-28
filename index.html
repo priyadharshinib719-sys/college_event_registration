@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Event Registration Portal</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">CERP</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="site-nav" id="siteNav">
+         <a href="#home" class="nav-link active" data-section="home">Home</a>
+         <a href="#events" class="nav-link" data-section="events">Events</a>
+         <a href="#register" class="nav-link" data-section="register">Register</a>
+         <a href="#registrations" class="nav-link" data-section="registrations">Registrations</a>
+      </nav>
+    </header>
+    <main>
+      <!-- HOME / DASHBOARD -->
+      <section id="home" class="page active-page">
+         <h1>College Event Registration Portal</h1>
+         <p class="tagline">Discover college events and register in a few simple steps.</p>
+         <div class="dashboard-cards">
+           <div class="card">
+             <h2 id="totalEvents">0</h2>
+             <p>Upcoming Events</p>
+           </div>
+           <div class="card">
+             <h2 id="totalRegistrations">0</h2>
+             <p>Registrations</p>
+           </div>
+           <div class="card">
+             <h2 id="seatsLeft">0</h2>
+             <p>Seats Available</p>
+           </div>
+         </div>
+         <div class="quick-links">
+           <a href="#events" class="btn nav-link" data-section="events">Browse Events</a>
+           <a href="#register" class="btn nav-link" data-section="register">Register Now</a>
+           <a href="#registrations" class="btn nav-link" data-section="registrations">View Registrations</a>
+         </div>
+      </section>
+
+       <!-- EVENTS -->
+       <section id="events" class="page">
+         <h1>Upcoming Events</h1>
+         <div class="table-wrapper">
+           <table id="eventsTable">
+             <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  <th>Venue</th>
+                  <th>Seats Left</th>
+                </tr>
+             </thead>
+             <tbody></tbody>
+           </table>
+         </div>
+       </section>
+
+       <!-- REGISTER -->
+       <section id="register" class="page">
+         <h1>Event Registration</h1>
+         <form id="regForm" class="form-card" novalidate>
+           <label for="fullName">Full Name</label>
+           <input type="text" id="fullName" placeholder="Enter your name" />
+           <label for="regNo">Register Number</label>
+           <input type="text" id="regNo" placeholder="e.g. 22325USO86" />
+
+
+
+
+
+           <label for="department">Department</label>
+           <select id="department">
+             <option value="">Select department</option>
+             <option>B.Sc Computer Science</option>
+             <option>B.Sc Mathematics</option>
+             <option>B.Sc Physics</option>
+             <option>B.Sc Chemistry</option>
+             <option>B.A English</option>
+             <option>B.Com</option>
+           </select>
+           <label for="email">Email</label>
+           <input type="email" id="email" placeholder="name@example.com" />
+           <label for="eventSelect">Event</label>
+           <select id="eventSelect"></select>
+           <button type="submit" class="btn submit-btn">Register</button>
+           <p id="formMessage" class="form-message" role="status"></p>
+         </form>
+       </section>
+
+      <!-- REGISTRATIONS -->
+      <section id="registrations" class="page">
+        <h1>Registered Participants</h1>
+        <div class="search-controls">
+          <input type="text" id="searchInput" placeholder="Search by name, register no or department..." />
+          <select id="filterEvent">
+             <option value="all">All Events</option>
+          </select>
+        </div>
+        <div class="table-wrapper">
+          <table id="regTable">
+             <thead>
+               <tr>
+                 <th>Name</th>
+                 <th>Register No.</th>
+                 <th>Department</th>
+                 <th>Event</th>
+                 <th>Action</th>
+               </tr>
+             </thead>
+             <tbody id="regBody"></tbody>
+          </table>
+        </div>
+        <p id="noResults" class="no-results" hidden>No matching registrations found.</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 College Event Registration Portal &middot; Priyadarshini B &middot; B.Sc Computer Science</p>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
